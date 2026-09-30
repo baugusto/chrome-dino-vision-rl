@@ -49,7 +49,7 @@ Para a ave baixa, que ocupa parte da região próxima ao solo, a análise verifi
 
 Se `d` é a distância horizontal entre o obstáculo e o dinossauro e `v` é a velocidade estimada em pixels por segundo, o tempo até a colisão é `TTC = d / v`. O salto é solicitado quando esse tempo alcança o limiar aprendido para a velocidade atual. A rede recebe tanto o TTC quanto a velocidade e sua variação recente.
 
-O controlador mantém sete faixas de velocidade, entre 150 e 950 px/s, com tempos base entre 0,28 e 0,45 segundo. Os valores entre faixas são interpolados. Ao passar um obstáculo ou colidir após um salto, somente a faixa correspondente ao salto recebe um pequeno ajuste. Uma falha na partida recém reiniciada, ainda lenta, não altera a faixa de alta velocidade. O antigo teste de candidatos que trocava o tempo base global entre episódios foi removido.
+O controlador mantém sete faixas de velocidade, entre 150 e 950 px/s, com tempos base entre 0,28 e 0,45 segundo. Os valores entre faixas são interpolados. Ao passar um obstáculo ou colidir após um salto, somente a faixa correspondente ao salto recebe um pequeno ajuste. Uma falha na partida recém reiniciada, ainda lenta, não altera a faixa de alta velocidade.
 
 ### Pterodátilos
 
