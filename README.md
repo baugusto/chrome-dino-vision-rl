@@ -45,6 +45,18 @@ O código obtém pixels com `getImageData` e constrói uma máscara da cor dos s
 
 Para a ave baixa, que ocupa parte da região próxima ao solo, a análise verifica uma faixa horizontal contínua do corpo. Isso ajuda a diferenciá-la de vários cactos agrupados. São heurísticas visuais, portanto outras versões do jogo, escalas e desenhos de sprite podem exigir recalibração.
 
+#### Capturas durante o desenvolvimento
+
+Estas imagens registram falsos positivos de versões anteriores da detecção. Elas ajudam a visualizar por que foram adicionados filtros de formato, cor e movimento; **não são uma avaliação da versão atual**.
+
+![Caixa vermelha envolvendo o cacto e parte de uma nuvem ao fundo](docs/deteccao-cacto-e-nuvem.png)
+
+*Figura 1: a caixa do obstáculo incluía elementos da paisagem atrás do cacto.*
+
+![Caixa vermelha residual à direita de um cacto, em uma região sem obstáculo](docs/caixa-residual-paisagem.png)
+
+*Figura 2: outra captura do falso positivo próximo à paisagem. A caixa vermelha aparece além do cacto real.*
+
 ### Velocidade e momento do salto
 
 Se `d` é a distância horizontal entre o obstáculo e o dinossauro e `v` é a velocidade estimada em pixels por segundo, o tempo até a colisão é `TTC = d / v`. O salto é solicitado quando esse tempo alcança o limiar aprendido para a velocidade atual. A rede recebe tanto o TTC quanto a velocidade e sua variação recente.
@@ -95,6 +107,7 @@ src/dino_rl.js          Script completo para colar no Console
 tests/dino_rl.test.cjs Simulação do canvas e dos comandos de teclado
 package.json           Atalho para executar a simulação com Node.js
 README.md              Conceito, uso, implementação e resultados
+docs/                  Capturas de falhas de detecção durante o desenvolvimento
 ```
 
 Para executar o teste de simulação local:
