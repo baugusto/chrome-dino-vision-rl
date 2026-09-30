@@ -1,0 +1,12 @@
+{
+  "name": "chrome-dino-vision-rl",
+  "version": "0.5.5",
+  "private": true,
+  "description": "Agente experimental para o Chrome Dino com visão do canvas e TensorFlow.js",
+  "scripts": {
+    "test": "node tests/dino_rl.test.cjs"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
